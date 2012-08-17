@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for tickets in ticket %}
+<div style="margin:10px; padding:5px; background:#ccc;">
+TicketID: {{ tickets.ticketid }}<br />
+ComputerID: {{ tickets.computerid }}<br />
+<p>Subject:<br /> {{ tickets.subject }}</p>
+Priority 10 only: {{ tickets.priority }}<br />
+Due Date: {{ tickets.duedate|date:"SHORT_DATE_FORMAT" }}
+</div>
+{% endfor %}
+
+
+{% endblock content %}
