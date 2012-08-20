@@ -1,0 +1,29 @@
+{% extends "dbase.html" %}
+{% block content %}
+<img src="static/assets/block.jpg">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td><i class="icon-tag"></i> TicketID</td>
+            <td><i class="icon-hdd"></i> ComputerID</td>
+            <td><i class="icon-list"></i> Subject</td>
+            <td><i class="icon-flag"></i> Priority &#x25BC;</td>
+            <td><i class="icon-time"></i> Due Date &#x25BC;</td>
+        </tr>
+    </thead>
+    <tbody>
+
+{% for tickets in ticket %}
+        <tr>
+            <td>{{ tickets.ticketid }}</td>
+            <td>{{ tickets.computerid }}</td>
+            <td>{{ tickets.subject }}</td>
+            <td>{{ tickets.priority }}</td>
+            <td>{{ tickets.duedate|date:"SHORT_DATE_FORMAT" }}</td>
+        </tr>
+{% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock content %}

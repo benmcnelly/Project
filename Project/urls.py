@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	url(r'^tests/', 'prettyreport.views.tests', name='tests'),
 	url(r'^reports/', 'prettyreport.views.reports', name='reports'),
-	url(r'^cwreports/', 'cwreport.views.cwreports', name='cwreports'),	
+	url(r'^dreports/', 'prettyreport.views.dreports', name='dreports'),
+	url(r'^cwreports/', 'cwreport.views.cwreports', name='cwreports'),
 	url(r'^$', HomeView.as_view()),
 )
